@@ -12,7 +12,7 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [ ] Paginação
+- [x] Paginação
 - [ ] Busca avançada
 - [ ] Integração com API privada para armazenamento e envio de email.
 

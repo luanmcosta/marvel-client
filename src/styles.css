@@ -167,3 +167,14 @@ html,body {
 .black-transparent:hover{
     background-color: rgba(0, 0, 0, 1);
 }
+
+.pagination {
+    margin: 3px 0;
+}
+
+.pagination li a{
+    color: white!important;
+}
+.pagination li.active {
+    background-color: rgba(255, 0, 0, 1)!important;
+}

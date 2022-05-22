@@ -1,18 +1,25 @@
-import { ComicInfo } from '../../contexts/ComicsContext'
+import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
 import {ComicsList} from '../ComicsList'
 
-interface MainProps {
-    comics : ComicInfo[]
-}
+import M from 'materialize-css/dist/js/materialize.min.js'
+import { useContext, useEffect } from 'react'
 
-export default function Main({comics} : MainProps) {
+
+export default function Main() {
+
+    const {getComicsByPage} = useContext(ComicsContext) as ComicsContextType;
+
+    useEffect(() => {
+        let el = document.querySelectorAll('.tabs');
+        M.Tabs.init(el, {swipeable: true});
+    });
 
     return (
         <div className='center-flex'>
             <div className='box'>
-                <div className='row'>
-                    {comics ? (<ComicsList items={comics} />) : (<></>)}
-                </div>
+                
+                {getComicsByPage() ? (<ComicsList items={getComicsByPage()} />) : (<></>)}
+                
             </div>
         </div>
     )

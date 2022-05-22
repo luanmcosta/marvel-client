@@ -10,8 +10,8 @@ export function ModalSendComics() {
 	const [name, setName] = useState('');
 
 	useEffect(() => {
-		var elems = document.querySelector('#modal-send-comics');
-		M.Modal.init(elems);
+		//var elems = document.querySelector('#modal-send-comics');
+		//M.Modal.init(elems);
 	}, []);
 
 	function handleConfirmSend(){

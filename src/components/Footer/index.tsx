@@ -9,7 +9,7 @@ export function Footer() {
     const [isMapOpen, setIsMapOpen] = useState(false);
     const [isAnyComicSelected, setIsAnyComicSelected] = useState(false);
 
-    const {clearSelectedComics, isAnySelected, address} = useContext(ComicsContext) as ComicsContextType;
+    const {clearSelectedComics, isAnySelected, address, currentPage, setCurrentPage} = useContext(ComicsContext) as ComicsContextType;
 
     function handleMapOpen(){
         setIsMapOpen(!isMapOpen);
@@ -25,9 +25,27 @@ export function Footer() {
         instance.open();
     }
 
+    function handleChangePage(page: number){
+        setCurrentPage(page);
+    }
+
+    const pages = [1, 2, 3, 4, 5];
+
     return (
         <footer className="page-footer footer-fixed grey darken-3">
+            <ul className="pagination center">
+                <li className="disabled"><a href="#!"><i className="material-icons">chevron_left</i></a></li>
 
+                {pages.map((page, index) => {
+                    return <li 
+                        key={index} 
+                        className={page == currentPage ? 'active' : "waves-effect"}
+                        onClick={() => handleChangePage(page)}
+                        ><a href="#!">{page}</a></li>
+                })}
+
+                <li className="disabled"><a href="#!"><i className="material-icons">chevron_right</i></a></li>
+            </ul>
             <div className='row map-container' 
                  style={{maxHeight: isMapOpen ? '500px' : '0px'}}>
                 <Map />

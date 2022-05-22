@@ -12,16 +12,16 @@ import './styles.css'
 import bgMain from './assets/img/bg2.jpg'
 import Main from './components/Main'
 import { ModalSendComics } from './components/ModalSendComics'
-import { ModalDetailedComic } from './components/ModalDetailedComic'
+
 
 function App() {
   
-  const {comics, addComics} = useContext(ComicsContext) as ComicsContextType;
+  const {addComics} = useContext(ComicsContext) as ComicsContextType;
   
   function getComics(){
     api.get('/comics', {
       params: {
-        offset: 40
+        limit: 100
       }
     })
     .then((data) => {
@@ -41,7 +41,7 @@ function App() {
       <main className='main' style={{backgroundImage: `url(${bgMain})`}} >
         <Navbar />
         <ModalSendComics/>
-        <Main comics={comics}/>   
+        <Main/>   
         <Footer />
       </main>
     )

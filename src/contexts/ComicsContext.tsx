@@ -21,7 +21,10 @@ export type ComicsContextType = {
     isAnySelected: () => boolean,
     address: string,
     setAddress: (addr: string) => void,
-    selectedComics: () => ComicInfo[]
+    selectedComics: () => ComicInfo[],
+    currentPage: number,
+    setCurrentPage: (page: number) => void,
+    getComicsByPage: () => ComicInfo[]
 }
 
 export const ComicsContext = createContext<ComicsContextType | null>(null);
@@ -34,6 +37,7 @@ function ComicsProvider({children}: ComicsProviderProps){
 
     const [comics, setComics] = useState<ComicInfo[]>([]);
     const [address, setAddress] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
 
     function selectComic(index: number) {
         var tempComics = [...comics];
@@ -65,11 +69,15 @@ function ComicsProvider({children}: ComicsProviderProps){
         setComics(tempComics);
     }
 
+    function getComicsByPage(){
+        return comics.slice((currentPage*20)-20, (currentPage*20));
+    }
+
     function isAnySelected() {
         return comics.some(comic => comic.selected == true)
     }
 
-    return <ComicsContext.Provider value={{comics, selectComic, sendComics, addComics, clearSelectedComics, isAnySelected, address, setAddress, selectedComics}} >{children}</ComicsContext.Provider>
+    return <ComicsContext.Provider value={{comics, selectComic, sendComics, addComics, clearSelectedComics, isAnySelected, address, setAddress, selectedComics, currentPage, setCurrentPage, getComicsByPage}} >{children}</ComicsContext.Provider>
 }
 
 export default ComicsProvider;
