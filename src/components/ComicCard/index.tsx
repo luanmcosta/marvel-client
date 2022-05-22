@@ -1,6 +1,8 @@
 import { useContext } from 'react'
 import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext';
 
+import imgNotFound from './../../assets/img/img-not-found.jpg'
+
 interface ComicCardProps {
   comic: ComicInfo;
   index: number;
@@ -11,8 +13,14 @@ export function ComicCard({index, comic, onShowInfo}: ComicCardProps) {
 
   const {comics, selectComic} = useContext(ComicsContext) as ComicsContextType;
 
+  function getImage(){
+    if(comic.thumbnail.path == 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
+      return imgNotFound
+    return comic.thumbnail.path + '.' + comic.thumbnail.extension
+  }
+
   function handleSelection(){
-    selectComic(index);
+    selectComic(comic.id);
   }
 
   function handleOnCardClick() {
@@ -40,7 +48,7 @@ export function ComicCard({index, comic, onShowInfo}: ComicCardProps) {
     <div className="flex-child col s6 m3 l2">
       <div className={"card "  + (comic.selected ? 'comic-selected' : '')} >
         <div className="card-image">
-          <img src={comic.thumbnail.path + '.' + comic.thumbnail.extension} />
+          <img src={getImage()} />
           <span className="card-title">{comic.title}</span>
             
             {isSelected()}

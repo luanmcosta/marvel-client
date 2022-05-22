@@ -14,7 +14,7 @@ export interface ComicInfo {
 
 export type ComicsContextType = {
     comics: ComicInfo[],
-    selectComic: (index: number) => void;
+    selectComic: (id: number) => void;
     sendComics: () => void;
     addComics: (comics: ComicInfo[]) => void,
     clearSelectedComics: () => void
@@ -39,9 +39,14 @@ function ComicsProvider({children}: ComicsProviderProps){
     const [address, setAddress] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
 
-    function selectComic(index: number) {
+    function selectComic(id: number) {
         var tempComics = [...comics];
-        tempComics[index].selected = !tempComics[index].selected;
+        
+        tempComics.forEach(elem => {
+            if(elem.id == id)  
+                elem.selected = !elem.selected;
+        });
+     
         setComics(tempComics);
     }
     
