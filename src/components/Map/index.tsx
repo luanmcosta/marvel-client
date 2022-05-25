@@ -15,7 +15,7 @@ interface ComicMapProps{
 }
 
 export const MapConfig = {
-  apiKey: 'YOUR GOOGLE MAP API KEY',
+  apiKey: 'AIzaSyAZZLtwNCKKejaOI6I7D-SEBmN0r2_fy7c',
   center: {
     lat: -6.6048645,
     lng: -39.0611601
