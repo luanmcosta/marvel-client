@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
 import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext';
 import ComicCard from '../ComicCard';
-import Slider from 'react-multi-carousel/lib/Carousel';
+
+import Slider from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 interface ComicsListProps{
   items: ComicInfo[];
+  onShowInfo: (comic: ComicInfo) => void;
 }
 
-export function ComicsList({items} : ComicsListProps) {
-
-  const {setDetailedComic} = useContext(ComicsContext) as ComicsContextType;
+export function ComicsList({items, onShowInfo} : ComicsListProps) {
 
   function onCardShowInfo(comic: ComicInfo){
-    setDetailedComic(comic);
-    var modalElement = document.querySelector('#modal-comic-info');
-    var instance = M.Modal.getInstance(modalElement);
+    onShowInfo(comic);
+    var instance = M.Modal.getInstance(document.querySelector('#modal-comic-info'));
     instance.open();
   }
 

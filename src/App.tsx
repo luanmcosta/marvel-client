@@ -7,14 +7,15 @@ import {ComicsContext ,ComicsContextType} from './contexts/ComicsContext';
 
 import 'material-icons/iconfont/material-icons.css';
 import 'materialize-css/dist/css/materialize.min.css';
-import 'react-multi-carousel/lib/styles.css';
+
+import 'materialize-css/dist/js/materialize.min.js'
+
 import './styles.css';
 
 import {Main} from './components/Main';
 
 import { Banner } from './components/Banner';
 import { ModalOrder } from './components/ModalOrder';
-import { ModalDetailedComic } from './components/ModalDetailedComic';
 
 /* Comic, Magazine, Trade Paperback, Graphic Novel */
 
@@ -47,7 +48,6 @@ function App() {
   
       <main className='main'>
         <Navbar />
-        <ModalDetailedComic />
         <ModalOrder />
         <Banner />
         <Main />   

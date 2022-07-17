@@ -13,7 +13,10 @@ export function Navbar () {
     const {isAnySelected, selectedComics, clearSelectedComics} = useContext(ComicsContext) as ComicsContextType;
 
     function checkScroll(){
-        document.documentElement.scrollTop ? setScrolled(true) : setScrolled(false);
+        if(document.documentElement.scrollTop > 300) 
+            setScrolled(true)
+        else 
+            setScrolled(false);
     }
 
     useEffect(() => {
@@ -74,7 +77,7 @@ export function Navbar () {
                     </div>
                 </li>
                 <li><a href="#!" onClick={handleOrderModal}><i className="material-icons">send</i>Send my Comics</a></li>
-                <li><a onClick={handleClearSelection} href="#!">Clear Selection</a></li>
+                <li><a href="#!" onClick={handleClearSelection} >Clear Selection</a></li>
                 <li><div className="divider"></div></li>
                 <li><a className="header">My Colletion</a></li>
                 <li>

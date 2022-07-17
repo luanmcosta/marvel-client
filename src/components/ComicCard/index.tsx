@@ -23,8 +23,8 @@ export function ComicCard({index, comic, onShowInfo}: ComicCardProps) {
   }
 
   return (
-      <div onClick={handleOnCardClick}>
-        <div className={"card " + (comic.selected ? 'comic-selected' : '')}>
+      <div>
+        <div onClick={handleOnCardClick} className={"card " + (comic.selected ? 'comic-selected' : '')}>
           <div className="card-image">
             <img src={getImage()}/>
             <span className="card-title">{comic.title}</span>

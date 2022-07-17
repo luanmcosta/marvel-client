@@ -27,7 +27,7 @@ export function ModalOrder() {
 	}
 	
 	return (
-		<div id="modal-order" className="modal">
+		<div id="modal-order" className="modal modal-fixed-footer">
 			<div className="modal-content">
 		
 				<div className="row">
@@ -78,3 +78,5 @@ export function ModalOrder() {
 		</div>
 	)
 }
+
+export default ModalOrder;

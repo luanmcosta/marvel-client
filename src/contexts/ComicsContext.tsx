@@ -33,7 +33,7 @@ export type ComicsContextType = {
     getComicsByPage: () => ComicInfo[],
     getComicsByType: (type: string) => ComicInfo[],
     setComics: (comicList: ComicInfo[]) => void,
-    setDetailedComic: (comic: ComicInfo) => void,
+    showComic: (comic: ComicInfo) => void,
     detailedComic: ComicInfo | null
 }
 
@@ -60,6 +60,10 @@ function ComicsProvider({children}: ComicsProviderProps){
         });
      
         setComics(tempComics);
+    }
+    
+    function showComic(comic: ComicInfo){
+        setDetailedComic(comic);
     }
     
     function addComics(comicList: ComicInfo[]){ //API FIX
@@ -101,7 +105,7 @@ function ComicsProvider({children}: ComicsProviderProps){
         return comics.some(comic => comic.selected == true);
     }
 
-    return <ComicsContext.Provider value={{detailedComic, setDetailedComic, setComics, isListLoaded, setIsListLoaded, comics, selectComic, sendComics, addComics, clearSelectedComics, isAnySelected, address, setAddress, selectedComics, currentPage, setCurrentPage, getComicsByPage, getComicsByType}} >{children}</ComicsContext.Provider>
+    return <ComicsContext.Provider value={{detailedComic, showComic, setComics, isListLoaded, setIsListLoaded, comics, selectComic, sendComics, addComics, clearSelectedComics, isAnySelected, address, setAddress, selectedComics, currentPage, setCurrentPage, getComicsByPage, getComicsByType}} >{children}</ComicsContext.Provider>
 }
 
 export default ComicsProvider;
