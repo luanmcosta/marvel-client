@@ -9,39 +9,48 @@ import 'material-icons/iconfont/material-icons.css'
 import 'materialize-css/dist/css/materialize.min.css'
 import './styles.css'
 
-import bgMain from './assets/img/bg2.jpg'
 import Main from './components/Main'
-import { ModalSendComics } from './components/ModalSendComics'
 
+import M from 'materialize-css/dist/js/materialize.min.js'
+import { Banner } from './components/Banner'
+import { ModalOrder } from './components/ModalOrder'
+import { ModalDetailedComic } from './components/ModalDetailedComic'
+
+/* Comic, Magazine, Trade Paperback, Graphic Novel */
 
 function App() {
   
-  const {addComics} = useContext(ComicsContext) as ComicsContextType;
-  
-  function getComics(){
-    api.get('/comics', {
-      params: {
-        limit: 100
+  const {addComics, setIsListLoaded, setComics} = useContext(ComicsContext) as ComicsContextType;
+
+  function getComics(type: string){
+    return api.get('/comics', {
+      params: { 
+        limit: 10,
+        format: type
       }
-    })
-    .then((data) => {
-      addComics(data.data.data.results);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  };
+    });
+  }
 
   useEffect(() => {
-    getComics();
+    setComics([]);
+    setIsListLoaded(false);
+    Promise.all([getComics('Comic'), getComics('Magazine'), getComics('Trade Paperback'), getComics('Graphic Novel')])
+    .then((data) => {
+      data.forEach((result) => {
+        addComics(result.data.data.results);
+      })
+      setIsListLoaded(true)
+    })
   }, []);
   
   return (
   
-      <main className='main' style={{backgroundImage: `url(${bgMain})`}} >
+      <main className='main'>
         <Navbar />
-        <ModalSendComics/>
-        <Main/>   
+        <ModalDetailedComic />
+        <ModalOrder />
+        <Banner />
+        <Main />   
         <Footer />
       </main>
     )

@@ -4,9 +4,9 @@ import App from './App'
 import ComicsProvider from './contexts/ComicsContext'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <>
     <ComicsProvider>
       <App />
     </ComicsProvider>
-  </React.StrictMode>
+  </>
 )

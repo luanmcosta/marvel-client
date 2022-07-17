@@ -1,13 +1,12 @@
-import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
-import {ComicsList} from '../ComicsList'
+import { ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
 
 import M from 'materialize-css/dist/js/materialize.min.js'
-import { useContext, useEffect } from 'react'
-
+import {useContext, useEffect } from 'react'
+import ComicsList from '../ComicsList';
 
 export default function Main() {
 
-    const {getComicsByPage} = useContext(ComicsContext) as ComicsContextType;
+    const {isListLoaded, getComicsByType} = useContext(ComicsContext) as ComicsContextType;
 
     useEffect(() => {
         let el = document.querySelectorAll('.tabs');
@@ -15,12 +14,27 @@ export default function Main() {
     });
 
     return (
-        <div className='center-flex'>
-            <div className='box'>
-                
-                {getComicsByPage() ? (<ComicsList items={getComicsByPage()} />) : (<></>)}
-                
-            </div>
+        <div id="catalog" className="row">
+            <section className="col s12">
+                <h4 className="white-text">Comics</h4>
+                {isListLoaded ? (<ComicsList items={getComicsByType('Comic')} />) : (<></>)}
+            </section>
+
+            <section className="col s12">
+                <h4 className="white-text">Magazines</h4>
+                {isListLoaded ? (<ComicsList items={getComicsByType('Magazine')} />) : (<></>)}
+            </section>
+
+            <section className="col s12">
+                <h4 className="white-text">Grapich Novel</h4>
+                {isListLoaded ? (<ComicsList items={getComicsByType('Graphic Novel')} />) : (<></>)}
+            </section>
+
+            <section className="col s12">
+                <h4 className="white-text">Trade Paperback</h4>
+                {isListLoaded ? (<ComicsList items={getComicsByType('Trade Paperback')} />) : (<></>)}
+            </section>
+            
         </div>
     )
 }
