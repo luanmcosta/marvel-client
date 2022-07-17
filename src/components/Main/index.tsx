@@ -2,7 +2,7 @@ import { ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
 
 import M from 'materialize-css/dist/js/materialize.min.js'
 import { useContext, useEffect } from 'react'
-import ComicsList from '../ComicsList';
+import { ComicsList } from '../ComicsList';
 
 export default function Main() {
 

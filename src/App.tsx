@@ -7,6 +7,7 @@ import {ComicsContext ,ComicsContextType} from './contexts/ComicsContext'
 
 import 'material-icons/iconfont/material-icons.css'
 import 'materialize-css/dist/css/materialize.min.css'
+import 'react-multi-carousel/lib/styles.css';
 import './styles.css'
 
 import Main from './components/Main'

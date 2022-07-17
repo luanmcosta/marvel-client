@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useContext } from 'react'
+import { useCallback, useState, useContext } from 'react'
 import {GoogleMap, useLoadScript, MarkerF} from '@react-google-maps/api'
 import { ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
 import Geocode from 'react-geocode'

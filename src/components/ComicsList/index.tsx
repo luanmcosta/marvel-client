@@ -5,8 +5,6 @@ import Carousel from 'react-multi-carousel';
 
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-import 'react-multi-carousel/lib/styles.css';
-
 interface ComicsListProps{
   items: Array<ComicInfo>;
 }
@@ -73,5 +71,3 @@ export function ComicsList({items} : ComicsListProps ) {
     </>
   )
 }
-
-export default ComicsList;
