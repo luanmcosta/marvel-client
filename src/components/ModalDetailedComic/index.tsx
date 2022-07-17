@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
+import { ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
 
 import M from 'materialize-css/dist/js/materialize.min.js'
 

@@ -1,5 +1,4 @@
-import React, { createContext, PropsWithChildren, useState } from "react";
-import { ModalDetailedComic } from "../components/ModalDetailedComic";
+import { createContext, useState } from "react";
 
 export interface ComicInfo {
     id: number,

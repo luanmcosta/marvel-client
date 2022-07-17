@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, Provider, useContext} from 'react'
+import { useEffect, useState, Provider, useContext} from 'react'
 import { api } from './lib/api'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
@@ -11,7 +11,6 @@ import './styles.css'
 
 import Main from './components/Main'
 
-import M from 'materialize-css/dist/js/materialize.min.js'
 import { Banner } from './components/Banner'
 import { ModalOrder } from './components/ModalOrder'
 import { ModalDetailedComic } from './components/ModalDetailedComic'

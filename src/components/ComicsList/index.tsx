@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext';
 import { ComicCard } from '../ComicCard';
-import { ModalDetailedComic } from '../ModalDetailedComic';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel'
 
