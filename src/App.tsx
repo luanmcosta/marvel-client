@@ -1,4 +1,4 @@
-import { useEffect, useState, Provider, useContext} from 'react'
+import { useEffect, useContext} from 'react'
 import { api } from './lib/api'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'

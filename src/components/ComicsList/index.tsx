@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext';
 import { ComicCard } from '../ComicCard';
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel'
 
 import M from 'materialize-css/dist/js/materialize.min.js'
 
