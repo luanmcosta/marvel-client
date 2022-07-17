@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 
 import M from 'materialize-css/dist/js/materialize.min.js'
 import bgNav from './../../assets/img/bg2.jpg'

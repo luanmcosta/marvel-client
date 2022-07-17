@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from 'react'
-import { ComicsContext, ComicsContextType } from '../../contexts/ComicsContext'
+import React, { useContext, useEffect, useState } from 'react';
+import { ComicsContext, ComicsContextType } from '../../contexts/ComicsContext';
 
-import M from 'materialize-css/dist/js/materialize.min.js'
+import M from 'materialize-css/dist/js/materialize.min.js';
 
-import imgNotFound from './../../assets/img/img-not-found.jpg'
+import imgNotFound from './../../assets/img/img-not-found.jpg';
 
 export function ModalDetailedComic() {
 

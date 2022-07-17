@@ -1,15 +1,15 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react';
 import { ComicInfo, ComicsContext, ComicsContextType } from '../../contexts/ComicsContext';
-import { ComicCard } from '../ComicCard';
-import Carousel from 'react-multi-carousel';
+import ComicCard from '../ComicCard';
+import Slider from 'react-multi-carousel/lib/Carousel';
 
-import M from 'materialize-css/dist/js/materialize.min.js'
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 interface ComicsListProps{
-  items: Array<ComicInfo>;
+  items: ComicInfo[];
 }
 
-export function ComicsList({items} : ComicsListProps ) {
+export function ComicsList({items} : ComicsListProps) {
 
   const {setDetailedComic} = useContext(ComicsContext) as ComicsContextType;
 
@@ -40,10 +40,7 @@ export function ComicsList({items} : ComicsListProps ) {
   };
 
   return (
-
-    <>
-
-      <Carousel
+      <Slider
         swipeable={true}
         draggable={true}
         showDots={false}
@@ -56,18 +53,20 @@ export function ComicsList({items} : ComicsListProps ) {
         containerClass="carousel-container"
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
-        
       >
-        {items.map((item, index) => {
-          return (<ComicCard 
-            key={item.id} 
-            index={item.id} 
-            comic={item}
-            onShowInfo={onCardShowInfo} />)
-          }
-        )}
-      </Carousel>;
+          {items.map((item, index) => {
+            return (
+              <div key={index} >
+                <ComicCard 
+                index={index}
+                comic={item}
+                onShowInfo={onCardShowInfo} />
+              </div>
+            )})
+        }
 
-    </>
+      </Slider>
   )
 }
+
+export default ComicsList;

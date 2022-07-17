@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export interface ComicInfo {
     id: number,
@@ -18,7 +18,7 @@ export interface ComicInfo {
 
 export type ComicsContextType = {
     isListLoaded: boolean,
-    setIsListLoaded: (status: boolean) => void
+    setIsListLoaded: (status: boolean) => void,
     comics: ComicInfo[],
     selectComic: (id: number) => void;
     sendComics: () => void;
@@ -31,7 +31,7 @@ export type ComicsContextType = {
     currentPage: number,
     setCurrentPage: (page: number) => void,
     getComicsByPage: () => ComicInfo[],
-    getComicsByType: (type: string) => ComicInfo[]
+    getComicsByType: (type: string) => ComicInfo[],
     setComics: (comicList: ComicInfo[]) => void,
     setDetailedComic: (comic: ComicInfo) => void,
     detailedComic: ComicInfo | null
@@ -94,11 +94,11 @@ function ComicsProvider({children}: ComicsProviderProps){
     }
     
     function getComicsByType(type: string){
-        return comics.filter(comic => comic.format == type)
+        return comics.filter(comic => comic.format == type);
     }
 
     function isAnySelected() {
-        return comics.some(comic => comic.selected == true)
+        return comics.some(comic => comic.selected == true);
     }
 
     return <ComicsContext.Provider value={{detailedComic, setDetailedComic, setComics, isListLoaded, setIsListLoaded, comics, selectComic, sendComics, addComics, clearSelectedComics, isAnySelected, address, setAddress, selectedComics, currentPage, setCurrentPage, getComicsByPage, getComicsByType}} >{children}</ComicsContext.Provider>

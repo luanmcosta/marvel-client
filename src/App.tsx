@@ -1,20 +1,20 @@
-import { useEffect, useContext} from 'react'
-import { api } from './lib/api'
-import { Navbar } from './components/Navbar'
-import { Footer } from './components/Footer'
+import React, { useEffect, useContext} from 'react';
+import { api } from './lib/api';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 
-import {ComicsContext ,ComicsContextType} from './contexts/ComicsContext'
+import {ComicsContext ,ComicsContextType} from './contexts/ComicsContext';
 
-import 'material-icons/iconfont/material-icons.css'
-import 'materialize-css/dist/css/materialize.min.css'
+import 'material-icons/iconfont/material-icons.css';
+import 'materialize-css/dist/css/materialize.min.css';
 import 'react-multi-carousel/lib/styles.css';
-import './styles.css'
+import './styles.css';
 
-import Main from './components/Main'
+import {Main} from './components/Main';
 
-import { Banner } from './components/Banner'
-import { ModalOrder } from './components/ModalOrder'
-import { ModalDetailedComic } from './components/ModalDetailedComic'
+import { Banner } from './components/Banner';
+import { ModalOrder } from './components/ModalOrder';
+import { ModalDetailedComic } from './components/ModalDetailedComic';
 
 /* Comic, Magazine, Trade Paperback, Graphic Novel */
 

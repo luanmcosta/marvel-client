@@ -1,6 +1,6 @@
-import { ComicInfo} from '../../contexts/ComicsContext';
+import React, { ComicInfo} from '../../contexts/ComicsContext';
 
-import imgNotFound from './../../assets/img/img-not-found.jpg'
+import imgNotFound from './../../assets/img/img-not-found.jpg';
 
 interface ComicCardProps {
   comic: ComicInfo;
@@ -33,3 +33,5 @@ export function ComicCard({index, comic, onShowInfo}: ComicCardProps) {
       </div>
   )
 }
+
+export default ComicCard;

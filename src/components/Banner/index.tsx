@@ -1,10 +1,8 @@
-import { useContext } from 'react';
-import { ComicsContext, ComicsContextType } from '../../contexts/ComicsContext';
+import React from 'react'
+
 import bgBanner from './../../assets/img/bg.jpg'
 
 export function Banner() {
-
-    const {comics} = useContext(ComicsContext) as ComicsContextType;
 
     return (
         <>
