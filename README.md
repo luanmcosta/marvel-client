@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Marvel Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub repo size](https://img.shields.io/github/repo-size/luanmcosta/marvel-client?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/luanmcosta/marvel-client?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/luanmcosta/marvel-client?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/luanmcosta/marvel-client?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/luanmcosta/marvel-client?style=for-the-badge)
 
-## Available Scripts
+### Demo
 
-In the project directory, you can run:
+<a href="https://marvel-client-sigma.vercel.app">Clique aqui</a>
 
-### `npm start`
+<img src="https://i.imgur.com/c1UYSky.png" alt="Desktop App">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="https://i.imgur.com/bzLbO25.png" alt="Enviando os comics">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### Ajustes e melhorias
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-### `npm run build`
+- [x] Integração com API privada para armazenamento e envio de email.
+- [x] Novo layout responsivo e limpo.
+- [ ] Paginação e busca avançada.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💻 Pré-requisitos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+* Você instalou a versão mais recente do Node.
+* Você tem uma máquina `<Windows / Linux / Mac>`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Instalando Marvel Client
 
-### `npm run eject`
+Para instalar o Marvel Client, siga estas etapas:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone ou baixe o repositório.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Linux e macOS:
+```
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Windows:
+```
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## ☕ Usando Marvel Client
 
-## Learn More
+Para usar Marvel Client, siga estas etapas:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Configure o os dados de API_KEY e HASH_MD5 no .ENV.LOCAL.EXAMPLE e renomeie-o para .ENV.LOCAL.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Dev:
+```
+npm run dev
+```
+
+Build:
+```
+npm run build
+```
+
+[⬆ Voltar ao topo](#marvel-client)<br>
